@@ -1,0 +1,76 @@
+//1.quartile//
+import matplotlib.pyplot as plt
+data=[34,18,100,27,54,52,93,59,61,87,68,85,78,82,91]
+box=plt.boxplot(data,vert=0,patch_artist=True)
+color='green'
+for p in box['boxes']:
+    p.set_facecolor(color)
+    
+plt.show()
+
+
+//3 quartiles//
+import matplotlib.pyplot as plt
+data1=[72,76,24,14,67,52,75,78,31,32]
+data2=[62,5,91,25,36,32,96,95,30,90]
+data3=[23,89,12,78,72,89,25,69,68,86]
+bdata=(data1,data2,data3)
+box=plt.boxplot(bdata,patch_artist=True)
+plt.show()
+
+//scatterplot//
+import matplotlib.pyplot as plt
+unemployment_rate=[6.1,5.8,5.7,5.7,5.8,5.6,5.5,5.3,5.2,5.2]
+stock_indexprice=[1500,1520,1525,1523,1515,1540,1547,1560,1555,1565]
+plt.scatter(unemployment_rate,stock_indexprice,c='b',marker='*')
+plt.xlabel('unemployment_rate',fontsize=16)
+plt.ylabel('stock_indexprice',fontsize=16)
+plt.show()
+
+//quartile//
+import matplotlib.pyplot as plt
+data1=[19,26,25,37,32,28,22,23,29,34,39,31]
+plt.boxplot(data1,patch_artist=True)
+plt.show()
+
+//bar chart using colors//
+import matplotlib.pyplot as plt
+class1=('i','ii','iii','iv','v','vi','vii','viii','ix','x')
+strength=[40,43,45,47,49,38,50,37,43,39]
+colors=['red','blue','yellow','orange','lightblue','green','lightgreen','pink','brown','grey']
+plt.bar(class1,strength,color=colors,align='center')
+plt.xlabel('strength',fontsize=12)
+plt.ylabel('class',fontsize=12)
+plt.show()
+
+//histogram//
+
+import matplotlib.pyplot as plt
+weights=[78,72,69,81,63,67,65,79,74,71,83,71,79,80]
+plt.hist(weights,bins=[50,55,60,65,70,75,80,85],color='black',edgecolor='red')
+plt.title('Muffin Weights Histogram')
+plt.xlabel('weight(grams)')
+plt.ylabel('frequency')
+plt.show()
+
+//line chart//
+import matplotlib.pyplot as plt
+import numpy as np
+x=np.arange(1,10,1)
+y=x**2
+plt.plot(x,y,color='red')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.show()
+
+//pandas q1//
+import pandas as pd
+S=pd.Series([1,2,3,4,5],index=['a','b','c','d','e'])
+print(S)
+print(S.iloc[1:4])
+print(S.loc['b':'e'])
+
+//pandas q2//
+import pandas as pd
+s=pd.Series({'Jan':31,'Feb':28,'Mar':31,'Apr':30})
+print(s)
