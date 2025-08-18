@@ -1,0 +1,92 @@
+\\4TH PGM IN FAIR RECORD\\
+
+import pandas as pd
+
+
+data_dict1 = {
+    'customer id': [1,2,3,4,5,6,7,8,9,10],
+    'gender': ['male','female','female','male','male','female','female','male','male','female'],
+    'age': [20,21,19,18,25,26,32,41,20,19],
+    'annual income(k$)': [10,20,30,10,25,60,70,15,21,27],
+    'spending score': [30,50,58,84,90,65,32,46,12,56]
+}
+
+data1 = pd.DataFrame(data_dict1)
+data1.to_csv("customers1.csv", index=False)
+print("Data1:")
+print(data1)
+
+
+data_dict2 = {
+    'customer id': [11,12,13,14,15,16,17,18,19,20],
+    'gender': ['male','female','male','male','male','female','male','female','female','male'],
+    'age': [23,33,41,18,25,26,32,41,20,19],
+    'annual income(k$)': [10,20,30,10,25,60,70,15,21,27],
+    'spending score': [38,54,48,99,94,66,44,51,12,56]
+}
+
+data2 = pd.DataFrame(data_dict2)
+data2.to_csv("customers2.csv", index=False)
+print("\nData2:")
+print(data2)
+
+
+df = pd.concat([
+    pd.read_csv("customers1.csv"),
+    pd.read_csv("customers2.csv")
+], ignore_index=True)
+
+print("\nConcatenated Data:")
+print(df)
+
+
+output
+
+Data1:
+   customer id  gender  age  annual income(k$)  spending score
+0            1    male   20                 10              30
+1            2  female   21                 20              50
+2            3  female   19                 30              58
+3            4    male   18                 10              84
+4            5    male   25                 25              90
+5            6  female   26                 60              65
+6            7  female   32                 70              32
+7            8    male   41                 15              46
+8            9    male   20                 21              12
+9           10  female   19                 27              56
+
+Data2:
+   customer id  gender  age  annual income(k$)  spending score
+0           11    male   23                 10              38
+1           12  female   33                 20              54
+2           13    male   41                 30              48
+3           14    male   18                 10              99
+4           15    male   25                 25              94
+5           16  female   26                 60              66
+6           17    male   32                 70              44
+7           18  female   41                 15              51
+8           19  female   20                 21              12
+9           20    male   19                 27              56
+
+Concatenated Data:
+    customer id  gender  age  annual income(k$)  spending score
+0             1    male   20                 10              30
+1             2  female   21                 20              50
+2             3  female   19                 30              58
+3             4    male   18                 10              84
+4             5    male   25                 25              90
+5             6  female   26                 60              65
+6             7  female   32                 70              32
+7             8    male   41                 15              46
+8             9    male   20                 21              12
+9            10  female   19                 27              56
+10           11    male   23                 10              38
+11           12  female   33                 20              54
+12           13    male   41                 30              48
+13           14    male   18                 10              99
+14           15    male   25                 25              94
+15           16  female   26                 60              66
+16           17    male   32                 70              44
+17           18  female   41                 15              51
+18           19  female   20                 21              12
+19           20    male   19                 27              56
