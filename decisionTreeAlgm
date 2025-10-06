@@ -84,6 +84,20 @@ filled=True,
 
 rounded=True)
 
+
+\\output
+
+
+accuracy on train data using gini: 1.0
+accuracy on test data using gini: 0.9473684210526315
+accuracy on train data using entropy: 1.0
+accuracy on test data using entopy: 0.9473684210526315
+accuracy on train data using entropy: 0.9642857142857143
+accuracy on test data using entopy: 0.9473684210526315
+
+
+\\balance output picture decisiontree.png
+
 plt.title("Decision Tree Visualization (Gini Criterion)")
 
 plt.show()
